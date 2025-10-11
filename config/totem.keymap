@@ -119,7 +119,7 @@ label= "NAVI"                              ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp C_VOL_DN  &kp C_VOL_UP &trans   &kp C_PREV  &kp C_NEXT      &trans       &trans       &trans     &trans
+                &kp C_VOL_DN  &kp C_VOL_UP &trans   &kp C_PREV  &kp C_NEXT      &trans       &trans       &trans     &trans      &trans
                 &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHIFT  &kp LBKT        &kp RBKT    &kp DOWN     &kp UP       &kp LEFT   &kp RIGHT
     &trans      &trans      &trans      &trans      &trans      &trans          &kp RPAR    &kp PG_DOWN  &kp PG_DOWN  &kp KP_N3  &kp KP_MULTIPLY &trans      
                                         &trans      &trans      &trans          &mo ADJ     &kp KP_N0    &trans      
