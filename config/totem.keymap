@@ -25,9 +25,10 @@
 #define NAV  1
 #define SYM  2
 #define NUM  3
-#define ADJ  4
-#define TVP1 5
-#define TVP2 6
+#define DESK 4
+#define ADJ  5
+#define TVP1 6
+#define TVP2 7
 
 // Arsenik timings (kanata defvar)
 #define TAP_TIMEOUT       200
@@ -124,7 +125,7 @@
                      &kp TAB        &kp HOME       &kp UP          &kp END        &kp PG_UP         &kp RA(L)  &kp N7         &kp N8          &kp N9         &kp LG(E)
                      &kp LC(A)      &kp LEFT       &kp DOWN        &kp RIGHT      &kp PG_DN         &kp RA(K)  &kp N4         &kp N5          &kp N6         &kp N0
   &trans             &kp LC(Z)      &kp LC(X)      &kp LC(C)       &kp LC(V)      &kp LS(TAB)       &kp COMMA  &kp N1         &kp N2          &kp N3         &kp DOT     &trans
-                                    &trans         &kp DEL         &trans                           &kp ESC    &trans         &trans
+                                    &trans         &kp DEL         &trans                           &plt DESK ESC &trans        &trans
             >;
         };
 
@@ -147,6 +148,17 @@
                      &kp N1         &kp N2         &kp N3          &kp N4         &kp N5            &kp N6     &kp N7         &kp N8          &kp N9         &kp N0
   &trans             &dk1           &dk2           &dk3            &dk4           &dk5              &none      &kp RA(K)      &kp COMMA       &kp DOT        &kp RA(L)   &trans
                                     &trans         &trans          &kp LS(SPACE)                    &trans     &trans         &trans
+            >;
+        };
+
+        // Desktops (hold Space, then hold Enter): Gui+N, Gui+Shift+N
+        desk_layer {
+            display-name = "DESK";
+            bindings = <
+                     &kp LG(LS(N1)) &kp LG(LS(N2)) &kp LG(LS(N3))  &kp LG(LS(N4)) &kp LG(LS(N5))    &kp LG(LS(N6)) &kp LG(LS(N7)) &kp LG(LS(N8)) &kp LG(LS(N9)) &kp LG(LS(N0))
+                     &kp LG(N1)     &kp LG(N2)     &kp LG(N3)      &kp LG(N4)     &kp LG(N5)        &kp LG(N6)     &kp LG(N7)     &kp LG(N8)     &kp LG(N9)     &kp LG(N0)
+  &trans             &trans         &trans         &trans          &trans         &trans            &trans         &trans         &trans         &trans         &trans      &trans
+                                    &trans         &trans          &trans                           &trans         &trans         &trans
             >;
         };
 

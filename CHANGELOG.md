@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-06 — Desktop layer + layout image
+
+### Added
+- DESK layer (hold Space, then hold Enter): home row = Gui+1…0, top row = Gui+Shift+1…0.
+  Replaces the laptop's Arsenik number-row Gui+N shortcuts (the Totem has no number row).
+  In NAV, the Enter thumb still taps Esc and now holds DESK.
+- `docs/totem-layout.png`: colored one-page image of all layers in the Totem shape.
+  Regenerate with `python3 docs/layout_png.py docs/totem-layout.png` (needs Pillow).
+
 ## 2026-11-05 — Qwerty-Lafayette + Arsenik
 
 The Totem now matches the laptop setup: OS layout Qwerty-Lafayette + kanata Arsenik.
