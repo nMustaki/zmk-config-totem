@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-11-07 — Cleanups
+
+### Removed
+- `config/boards/shields/totem/totem.keymap`: stale default keymap. The build already uses
+  `config/totem.keymap` ("Using keymap file: /cfg/config/totem.keymap"). It used deprecated
+  `global-quick-tap` and `label`.
+- `config/boards/shields/totem/totem.dtsi`: deprecated `label = "KSCAN";` on the kscan node.
+
+### Changed
+- `config/boards/shields/totem/totem.zmk.yml`: `requires: [seeeduino_xiao_ble]` becomes
+  `requires: [seeed_xiao]`. The old board name no longer exists; in-tree ZMK shields require the
+  `seeed_xiao` interconnect, which `xiao_ble//zmk` exposes and `totem.dtsi` uses (`&xiao_d`).
+
 ## 2026-11-07 — Battery level of both halves
 
 ### Added
