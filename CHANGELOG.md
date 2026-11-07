@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-07 — Battery level of both halves
+
+### Added
+- `config/totem_left.conf`: the left half (central) fetches the right half's battery level
+  and reports it to the host as a second Battery Level service.
+
 ## 2026-11-06 — Desktop layer + layout image
 
 ### Added
