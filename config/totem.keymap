@@ -27,8 +27,6 @@
 #define NUM  3
 #define DESK 4
 #define ADJ  5
-#define TVP1 6
-#define TVP2 7
 
 // Arsenik timings (kanata defvar)
 #define TAP_TIMEOUT       200
@@ -79,6 +77,16 @@
             quick-tap-ms = <TAP_TIMEOUT>;
             bindings = <&mo>, <&kp>;
         };
+        // Quote key: tap ' / hold ". Uses the Lafayette AltGr codes,
+        // because the OS layout does not map the SQT keycode to '.
+        quote: quote_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <LONG_HOLD_TIMEOUT>;
+            quick-tap-ms = <TAP_TIMEOUT>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     combos {
@@ -87,11 +95,6 @@
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
-        };
-        combo_tvp {
-            timeout-ms = <100>;
-            key-positions = <11 12 13>;
-            bindings = <&tog TVP1>;
         };
     };
 
@@ -113,7 +116,7 @@
             bindings = <
                      &kp Q          &kp W          &kp E           &kp R          &kp T             &kp Y      &kp U          &kp I           &kp O          &kp P
                      &kp A          &hrm LGUI S    &hrm LCTRL D    &hrm LALT F    &kp G             &kp H      &hrm LALT J    &hrm RCTRL K    &hrm RGUI L    &kp SEMI
-  &kp NON_US_BSLH    &kp Z          &kp X          &kp C           &kp V          &kp B             &kp N      &kp M          &kp COMMA       &kp DOT        &kp FSLH    &kp SQT
+  &kp NON_US_BSLH    &kp Z          &kp X          &kp C           &kp V          &kp B             &kp N      &kp M          &kp COMMA       &kp DOT        &kp FSLH    &quote RA(SEMI) RA(O)
                                     &kp TAB        &pmt LSHFT BSPC &hlt NAV SPACE                   &plt SYM RET   &kp DEL    &mo ADJ
             >;
         };
@@ -172,24 +175,5 @@
             >;
         };
 
-        tvp1_layer {
-            display-name = "TVP 1";
-            bindings = <
-                     &kp TAB        &kp I          &kp LC(LALT)    &kp O          &kp LC(F20)       &none      &none          &none           &none          &none
-                     &lt TVP2 L     &kp LEFT       &kp LALT        &kp RIGHT      &kp SPACE         &none      &none          &none           &none          &none
-  &kp J              &kp LSHFT      &kp LC(C)      &kp BSPC        &kp LC(V)      &kp LC(F19)       &none      &none          &none           &none          &none       &none
-                                    &trans         &kp LC(F14)     &kp LC(F13)                      &none      &none          &none
-            >;
-        };
-
-        tvp2_layer {
-            display-name = "TVP 2";
-            bindings = <
-                     &kp LC(F18)    &kp LS(I)      &kp LS(HOME)    &kp LS(O)      &kp LS(F)         &trans     &kp F7         &kp F8          &kp F9         &kp F12
-                     &trans         &kp LS(LEFT)   &kp LC(F17)     &kp LS(RIGHT)  &kp RET           &trans     &kp F4         &kp F5          &kp F6         &kp F11
-  &trans             &kp J          &kp LS(C)      &kp LC(F16)     &kp LS(V)      &kp LC(F15)       &trans     &kp F1         &kp F2          &kp F3         &kp F10     &trans
-                                    &trans         &kp LC(F12)     &kp LC(F11)                      &trans     &trans         &trans
-            >;
-        };
     };
 };

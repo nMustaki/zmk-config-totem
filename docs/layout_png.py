@@ -37,7 +37,7 @@ LAYERS = [
   k("A"),k("S","Gui","mod"),k("D","Ctrl","mod"),k("F","Alt","mod"),k("G"),
   k("H"),k("J","Alt","mod"),k("K","Ctrl","mod"),k("L","Gui","mod"),k("★","dead key","dead"),
   k("<  >","","alpha"),k("Z"),k("X"),k("C"),k("V"),k("B"),
-  k("N"),k("M"),k(", ;"),k(". :"),k("/ ?"),k("' \"","","alpha"),
+  k("N"),k("M"),k(", ;"),k(". :"),k("/ ?"),k("'","hold \"","mod"),
   k("Tab","","thumb"),k("⌫","Shift","thumb"),k("Space","NAV","thumb"),
   k("⏎","SYM","thumb"),k("Del","","thumb"),k("ADJ","hold","thumb"),
  ]),
@@ -74,20 +74,6 @@ LAYERS = [
   k("Boot","loader","sys"),k("BT next","","sys"),T,T,T, T,k("F4","","fn"),k("F5","","fn"),k("F6","","fn"),k("F11","","fn"),
   T,T,k("BT prev","","sys"),T,T,T, T,k("F1","","fn"),k("F2","","fn"),k("F3","","fn"),k("F10","","fn"),T,
   T,T,T, T,T,T,
- ]),
- ("TVP 1 — TVPaint (toggle A+S+D)", [
-  k("Tab","","app"),k("I","","app"),k("Ctrl+Alt","","app"),k("O","","app"),k("C-F20","","app"), N,N,N,N,N,
-  k("L","TVP 2","thumb"),k("←","","nav"),k("Alt","","mod"),k("→","","nav"),k("Space","","app"), N,N,N,N,N,
-  k("J","","app"),k("Shift","","mod"),k("Ctrl+C","","app"),k("⌫","","app"),k("Ctrl+V","","app"),k("C-F19","","app"),
-  N,N,N,N,N,N,
-  T,k("C-F14","","app"),k("C-F13","","app"), N,N,N,
- ]),
- ("TVP 2 — hold L in TVP 1", [
-  k("C-F18","","app"),k("⇧I","","app"),k("⇧Home","","app"),k("⇧O","","app"),k("⇧F","","app"), T,k("F7","","fn"),k("F8","","fn"),k("F9","","fn"),k("F12","","fn"),
-  T,k("⇧←","","nav"),k("C-F17","","app"),k("⇧→","","nav"),k("⏎","","app"), T,k("F4","","fn"),k("F5","","fn"),k("F6","","fn"),k("F11","","fn"),
-  T,k("J","","app"),k("⇧C","","app"),k("C-F16","","app"),k("⇧V","","app"),k("C-F15","","app"),
-  T,k("F1","","fn"),k("F2","","fn"),k("F3","","fn"),k("F10","","fn"),T,
-  T,k("C-F12","","app"),k("C-F11","","app"), T,T,T,
  ]),
 ]
 
@@ -186,7 +172,7 @@ for j, (cat, txt) in enumerate(items):
     d.rounded_rectangle([x, y, x + 34, y + 24], 5, fill=C[cat][0], outline="#9a9a9a")
     d.text((x + 44, y + 4), txt, font=f_note, fill="#333")
 notes = ["Accents: ★ then a letter (★ e → é, ★ a → à …). Needs the Qwerty-Lafayette OS layout.",
-         "G⇧ = Gui+Shift.   Combos: Q+W = Esc   ·   A+S+D = toggle TVP 1"]
+         "G⇧ = Gui+Shift.   Combos: Q+W = Esc"]
 for j, n in enumerate(notes):
     d.text((ox + 20, oy + PH - 50 + j * 20), n, font=f_note, fill="#333")
 

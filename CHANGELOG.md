@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-11-17 — Fix quote key
+
+### Fixed
+- `config/totem.keymap`: base-layer quote key taps ' and holds ". It sends the Lafayette AltGr codes (RA(O), RA(SEMI)) instead of SQT.
+- `config/totem.keymap`: remove the `combo_tvp` combo, which referenced the removed TVP1 layer.
+- `docs/images/totem-layout.png`: show the quote hold-tap; drop the TVP layers.
+
+## 2026-11-07 — Remove uneeded layouts
+
+### Removed
+- `config/totem.keymap`: remove uneeded tpv1 and tvp2 layouts
+
 ## 2026-11-07 — Cleanups
 
 ### Removed
